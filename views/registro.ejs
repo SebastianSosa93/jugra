@@ -1,0 +1,58 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <header class="bloque-titulo">
+        <h1 name="titulo" id="titulo">Nuevo Usuario</h1>
+    </header>
+
+    <form class="formulario" id="formulario" action="/registro" method="post">
+        <!-- Grupo nombre -->
+        <div class="formulario__grupo" id="grupo__nombre">
+            <label for="campo-nombre" class="formulario__label">Nombre</label>
+            <div class="formulario__grupo-input">
+                <input type="text" name="campo-nombre" id="campo-nombre" class="formulario__input">
+                <i class="formulario__validacion-estado fa-solid fa-text-slash"></i>
+            </div>
+            <p class="formulario__input-error">El nombre sólo puede tener letras y no más de 40 caracteres</p>
+        </div>
+        
+        <!-- Grupo apellido -->
+        <div class="formulario__grupo" id="grupo__apellido">
+            <label for="campo-apellido" class="formulario__label">Apellido</label>
+            <div class="formulario__grupo-input">
+                <input type="text" name="campo-apellido" id="campo-apellido" class="formulario__input">
+                <i class="formulario__validacion-estado fa-solid fa-text-slash"></i>
+            </div>
+            <p class="formulario__input-error">El apellido sólo puede tener letras y no más de 40 caracteres</p>
+        
+        </div><!-- Grupo Email -->
+        <div class="formulario__grupo" id="grupo__email">
+            <label for="campo-email" class="formulario__label">E-mail</label>
+            <div class="formulario__grupo-input" >
+                <input type="email" name="campo-email" id="campo-email" class="formulario__input">
+                <i class="formulario__validacion-estado fa-solid fa-text-slash"></i>
+            </div>
+            <p class="formulario__input-error">El E-mail no debe tener espacios, debe tener '@' por ejemplo: juanperez2024@gmail.com</p>
+            
+        </div><!-- Grupo password -->
+        <div class="formulario__grupo" id="grupo__contrasena">
+            <label for="campo-contrasena" class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" name="campo-contrasena" id="campo-contrasena" class="formulario__input">
+                <i class="formulario__validacion-estado fa-solid fa-text-slash"></i>
+            </div>
+            <p class="formulario__input-error">La contrasena tiene que ser de entre 4 y 12 caracteres</p>
+        </div>
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor ingrese los datos correctamente.</p>
+        </div>
+
+        <input type="submit" value="Registrar" name="btn-registrar" id="btn-registrar" class="btn-registrar">        
+        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Usuario registrado correctamente!</p>
+    </form>
+    <button name="btn-cancelar" id="btn-cancelar">Cancelar</button>
+
+</body>

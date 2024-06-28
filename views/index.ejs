@@ -1,0 +1,52 @@
+<head>
+    <title>Inicio</title>
+</head>
+<fieldset name="bloque" id="bloque">
+    <header class="bloque-titulo">
+          <H1 name="titulo" id="titulo"> JUGRA - JUGAR GRATIS</H1>
+          <h2>Listado de juegos gratis</h2>
+          <section class="bloque-orden">
+              <label for="ordenar" class="etiqueta" id="etiqueta">Ordenar</label>
+              <select name="ordenar" id="ordenar">
+                  <option value="id">Por número</option>
+                  <option value="nombre" >Por nombre</option>
+              </select>
+          </section>
+    </header>
+  <main>
+      <% for(i=0; i<juego.length; i++){ %>
+          <section class="bloque-juegos" id="bloque-juegos">
+              <p name="juegos" id="juegos"> <%=juego[i].titulo%></p>
+              <div name="bloqueId" id="bloqueId">
+                  <span name="juegoID" id="juegoID"><%=juego[i].juegoID%> </span>
+              </div>
+              <button name="btn-informacion" id="btn-informacion" data-id="<%=juego[i].juegoID%>">Info</button> 
+              <button name="btn-favorito" id="btn-favorito" data-id="<%=juego[i].juegoID%>">Favorito</button>
+             
+              <form class="formulario__favorito" id="formulario__favorito" action="/favoritos" method="post">
+                <!-- estado -->
+                <div class="formulario__grupo-favorito" id="grupo__favorito-estado">
+                    <label for="estado-favorito" class="etiqueta-estado" id="etiqueta-estado">Estado</label>
+                    <select class="estado-favorito" id="estado-favorito" data-id="<%=juego[i].juegoID%>">
+                        <option value="1">Jugado</option>
+                        <option selected value="2">No jugado</option>
+                        <option value="3">Terminado</option>
+                    </select>
+                </div>
+                <!-- valoracion-->
+                <div class="formulario__grupo-favorito" id="grupo__favorito-valoracion">
+                    <label for="valoracion-favorito" class="etiqueta-valoracion" id="etiqueta-valoracion">Valoración</label>
+                    <input type="number" data-id="<%=juego[i].juegoID%>" class="valoracion-favorito" id="valoracion-favorito" min="1" max="10">
+                </div>
+                <!-- comentario -->
+                <div class="formulario__grupo-favorito" id="grupo__favorito-comentario">
+                    <label for="comentario-favorito" class="etiqueta-comentario" id="etiqueta-comentario">Comentario</label>
+                    <input type="text" class="comentario-favorito" id="comentario-favorito" data-id="<%=juego[i].juegoID%>">
+                </div>
+                <input type="submit" value="Confirmar" class="btn-confirmar-favorito" id="btn-confirmar-favorito" data-id="<%=juego[i].juegoID%>">
+              </form>
+              <button class="btn-cancelar-favorito" id="btn-cancelar-favorito"data-id="<%=juego[i].juegoID%>">Cancelar</button>
+          </section>
+      <% } %>
+  </main>
+  </fieldset>

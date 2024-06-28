@@ -1,0 +1,25 @@
+<header class="bloque-titulo">
+    <h1 class="titulo" id="titulo">Información de <%=titulo%> </h1>
+    
+</header>
+<body>
+    <figure class="bloque-imagen" id="bloque-imagen">
+        <img src="<%=imagen%>" alt="imagen del juego <%=titulo%>" width="200" height="200">
+        <figcaption class="descripcion" id="descripcion"><%=descripcion%></figcaption>
+    </figure>
+
+    <section name="enlaces" class="enlaces" id="enlaces">
+        <a href="<%=enlace%>"> <span> Ir a la pagina del juego</span></a>
+    </section>
+
+    <section name="datos-adicionales" class="datos-adicionales" id="datos-adicionales">
+        <h2>Datos Adicionales:</h2>
+        <ul>
+            <li class="imagen-a"><b>Plataforma:</b> <%=plataforma%></li>
+            <li class="imagen-b"><b>Distribuidor:</b> <%=distribuidor%></li>
+            <li class="imagen-c"><b>Desarrollador:</b> <%=desarrollador%></li>
+            <li class="imagen-d"><b>Fecha de lanzamiento:</b> <%=fecha%></li>        
+        </ul>
+    </section>
+    
+</body>

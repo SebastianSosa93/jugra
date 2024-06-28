@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/perfil.css">
+    <title>Perfil</title>
+</head>
+<body>
+    <nav class="barra-nav" id="perfil-barra-nav">
+        <button name="btn-cs" id="btn-cs">CERRAR SESIÓN</button>
+    </nav>
+    <header class="bloque-titulo" id="bloque-titulo">
+        <h1 id="titulo" class="perfil__titulo">Perfil de <%=usuario%></h1>
+    </header>
+    <main class="contenido-perfil" id="contenido-perfil">
+        
+        <h2 class="titulo-contenedor" id="titulo-juegos-perfil">Juegos Favoritos</h2>
+        
+        <section class="contenedor-juegos-perfil">          
+        <% for(i=0; i<juego.length; i++){ %>              
+            <form method="put" class="formulario__editar-perfil" id="formulario__editar-perfil">
+                            <!--Bloque de Juego -->
+            <div class="bloque-juego-perfil" id="bloque-juego-perfil">                
+                <p class="juego-perfil" id="juego-perfil">Titulo: <%=juego[i].titulo%></p>
+                            <!-- bloque de estado y valoracion -->
+                <div class="bloque-datos-perfil" id="bloque-datos-perfil">
+                                
+                    <div class="bloque-estado-perfil" id="bloque-estado-perfil">
+                        <p class="estado-perfil" id="estado-perfil">Estado: <%=juego[i].tipoEstado%> </p>
+                           <!-- estado -->
+                <div class="formulario__grupo-favorito" id="grupo__favorito-estado">
+                    <label for="formulario__estado-perfil" class="formulario__etiqueta-estado formulario" id="formulario__etiqueta-estado">Estado</label>
+                    <select name="estado" class="formulario__estado-perfil" id="formulario__estado-perfil">
+                        <option value="1">Jugado</option>
+                        <option selected value="2">No jugado</option>
+                        <option value="3">Terminado</option>
+                    </select>
+                </div>    
+                    <div class="bloque-valoracion-perfil" id="bloque-valoracion-perfil">
+                        <p class="valoracion-perfil" id="valoracion-perfil">Valoracion: <%=juego[i].valoracion%></p>
+                         <!-- valoracion-->
+                <div class="formulario__grupo-favorito" id="grupo__favorito-valoracion">
+                    <label for="formulario__valoracion-perfil" class="formulario__etiqueta-valoracion" id="formulario__etiqueta-valoracion">Valoración</label>
+                    <input name="valoracion" type="number" class="formulario__valoracion-perfil" id="formulario__valoracion-perfil" min="1" max="10">
+                </div>
+                    </div>                    
+                                    <!-- bloque de comentario -->
+                    <div class="bloque-comentario-perfil" id="bloque-comentario-perfil">
+                        <p class="comentario-perfil" id="comentario-perfil">Comentario: <%=juego[i].comentario%></p>
+                                    <!-- comentario -->
+                            <div class="formulario__grupo-favorito" id="grupo__favorito-comentario">
+                                <label for="formulario__comentario-perfil" class="formulario__etiqueta-comentario" id="formulario__etiqueta-comentario">Comentario</label>
+                                <input name="comentario"  type="text" class="formulario__comentario-perfil" id="formulario__comentario-perfil">
+                            </div>
+                            
+                        <button class="btn-confirmar-perfil" id="btn-confirmar-perfil">Confirmar</button>
+                        
+                        <button class="btn-cancelar-perfil" id="btn-cancelar-perfil">Cancelar</button>
+                                
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+            </form>
+            <button class="btn-editar-perfil" id="btn-editar-perfil" data-id="<%=juego[i].juegoID%>">Editar</button>
+            <button class="btn-eliminar-perfil" id="btn-eliminar-perfil" data-id="<%=juego[i].juegoID%>">Eliminar</button>
+        <% } %>
+        </section>
+    </main>
+</body>
+</html>
