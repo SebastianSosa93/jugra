@@ -51,7 +51,10 @@ async function loadData() {
     let email;
 
     //Se muestran los juegos ordenados por número(por defecto) o en orden alfabético, según la opción elegida.
-      app.get("/juegos", async(req,res) =>{
+       app.get("/",async(req,res)=>{
+        res.redirect("/juegos");
+      }) 
+     app.get("/juegos", async(req,res) =>{
         let orden = req.query.orden;
                 
         if(orden){
